@@ -1,0 +1,132 @@
+  /* Optional container to center content */
+  .transaction-container {
+    max-width: 1200px;
+    min-height: 90vh;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  /* ----------------------------
+     TABS
+  ----------------------------- */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* So the border-radius is clean */
+    margin: 1rem auto;
+    max-width: 1300px; /* optional width limit */
+  }
+  
+  .tab-button {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    color: #4A5568;
+    border-right: 1px solid #E2E8F0;
+  }
+  
+  .tab-button:last-child {
+    border-right: none; /* remove border on the last tab */
+  }
+  
+  .tab-button:hover {
+    background: #EDF2F7;
+  }
+  
+  .tab-button.active {
+    background: #FFA500; /* brand color */
+    color: #fff;
+  }
+  
+  /* ----------------------------
+     TAB CONTENT
+  ----------------------------- */
+  .tab-content {
+    display: none; /* hide all by default */
+    background: #fff;
+    margin: 0 auto;
+    max-width: 1300px; /* optional width limit */
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+  }
+  
+  .tab-content.active {
+    display: block; /* show the active tab */
+  }
+  
+  /* ----------------------------
+     TABLE STYLING
+  ----------------------------- */
+  .order-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .order-table thead {
+    background: #F7FAFC;
+  }
+  
+  .order-table th {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid #E2E8F0;
+    font-weight: 600;
+    color: #4A5568;
+    font-size: 0.95rem;
+  }
+  
+  .order-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #E2E8F0;
+    vertical-align: middle;
+    font-size: 0.95rem;
+    color: #2D3748;
+  }
+  
+  /* Product cell: combine image & name */
+  .product-cell {
+    display: flex;
+    align-items: center;
+  }
+  
+  .product-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid #E2E8F0;
+  }
+  
+  .product-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .cancel-link {
+    display: inline-block;
+    color: #E53E3E;
+    text-decoration: none;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+  
+  .cancel-link:hover {
+    text-decoration: underline;
+  }
+  
+  .cancelled-text {
+    color: #718096;
+    font-style: italic;
+    font-size: 0.875rem;
+    margin-left: 0.5rem;
+  }
+  

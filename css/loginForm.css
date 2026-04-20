@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    padding: 20px;
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 420px;
+}
+
+.login-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.login-left-side {
+    padding: 2.5rem 2rem;
+    width: 100%;
+}
+
+.login-form {
+    width: 100%;
+}
+
+/* Title: large, bold, black, left-aligned */
+.login-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #000;
+    text-align: left;
+    margin-bottom: 1.75rem;
+}
+
+.login-main-input {
+    margin-bottom: 1.5rem;
+}
+
+.login-input-container {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.login-input-container:last-of-type {
+    margin-bottom: 0.5rem;
+}
+
+.login-input-container i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 0.95rem;
+    z-index: 1;
+}
+
+/* Inputs: light gray borders, rounded corners */
+.login-input-container input {
+    width: 100%;
+    padding: 12px 14px 12px 44px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    transition: border-color 0.2s ease;
+}
+
+.login-input-container input::placeholder {
+    color: #aaa;
+}
+
+.login-input-container input:focus {
+    outline: none;
+    border-color: #ccc;
+}
+
+/* Forgot password: right-aligned, smaller, dark gray */
+.login-forgot-password {
+    text-align: right;
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.login-forgot-password a {
+    font-size: 0.875rem;
+    color: #444;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.login-forgot-password a:hover {
+    color: #000;
+}
+
+.login-button-container {
+    text-align: center;
+}
+
+/* Orange Login button */
+.login-submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: #FFA500;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.login-submit-btn:hover {
+    background: #e69500;
+}
+
+/* Not Register Yet? in lighter gray/blue; Sign Up in blue, underlined */
+.login-signup-link {
+    text-align: center;
+    margin-top: 1.25rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.login-signup-link a {
+    color: #2563eb;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.login-signup-link a:hover {
+    color: #1d4ed8;
+}
+
+/* Right side (image) - hidden on mobile */
+.login-right-side {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .login-wrapper {
+        max-width: 1000px;
+    }
+
+    .login-container {
+        display: flex;
+        min-height: 520px;
+        align-items: stretch;
+    }
+
+    /* Left: form; right edge will be covered by curved image overlap */
+    .login-left-side {
+        width: 42%;
+        min-width: 380px;
+        padding: 3rem 2.5rem;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .login-form {
+        width: 100%;
+    }
+
+    /* Right: image with organic convex curved left edge (reveal effect) */
+    .login-right-side {
+        display: block;
+        flex: 1;
+        min-height: 320px;
+        background: url('../assets/img/LoginForm.png') no-repeat center center;
+        background-size: cover;
+        /* Organic concave curve on the left: image “peels” in with a large curve */
+        border-top-left-radius: 55% 50%;
+        border-bottom-left-radius: 55% 50%;
+        position: relative;
+        margin-left: -3%;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        padding: 16px;
+    }
+
+    .login-left-side {
+        padding: 2rem 1.5rem;
+    }
+
+    .login-title {
+        font-size: 1.65rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .login-left-side {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .login-title {
+        font-size: 1.4rem;
+    }
+
+    .login-input-container input {
+        padding: 10px 12px 10px 40px;
+        font-size: 0.9375rem;
+    }
+
+    .login-submit-btn {
+        padding: 12px;
+    }
+}

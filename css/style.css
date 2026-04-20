@@ -1,0 +1,527 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/* Page transitions */
+body {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Fade-out effect */
+body.fade-out {
+    opacity: 0;
+}
+
+/* General Header Styling */
+header {
+    display: flex;
+    justify-content: space-between; /* Align logo, nav, and login section */
+    align-items: center; /* Vertically align all elements */
+    padding: 0 2rem; /* Add padding for spacing */
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: sticky; /* Sticky header for better UX */
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+/* Logo Styling */
+.logo img {
+    width: 100px; /* Adjust logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Navigation Menu */
+.nav-menu {
+    flex-grow: 1; /* Allow nav to take up available space */
+    text-align: center; /* Center-align the menu */
+    margin-left: 2rem; /* Add spacing between logo and nav */
+}
+
+.nav-menu ul {
+    display: flex;
+    justify-content: center; /* Center-align menu items */
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul li {
+    margin: 0 1rem; /* Consistent spacing between menu items */
+}
+
+.nav-menu ul li a {
+    text-decoration: none; /* Remove underline */
+    font-size: 16px;
+    color: #333; /* Darker text for better visibility */
+    font-weight: 500; /* Slightly bold text */
+    padding: 5px 0; /* Add padding for spacing */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth hover and active effect */
+}
+
+.nav-menu ul li a:hover {
+    color: #ad7610; /* Blue on hover */
+}
+
+/* Active state */
+.nav-menu ul li a.active {
+    color: #ffa500; /* Change text color for active */
+    border-bottom: 3px solid orange; /* Add orange underline for active link */
+}
+
+
+/* Login Section */
+.login-section {
+    display: flex;
+    gap: 1rem; /* Space between icons */
+    align-items: center; /* Align icons vertically */
+}
+
+.login-section a {
+    color: #333; /* Darker icon color */
+    font-size: 20px; /* Larger icon size */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.login-section a:hover {
+    color: #007bff; /* Blue on hover */
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.cart-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-icon {
+    font-size: 20px;
+    color: black;
+}
+
+.cart-badge {
+    background-color: orange;
+    color: white;
+    font-size: .5rem;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 0.2rem 0.3rem;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: #333; /* Dark bars */
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Hide Nav and Login Section */
+    .nav-menu,
+    .login-section {
+        display: none; /* Hide navigation and login section */
+    }
+
+    /* Show Hamburger Menu */
+    .hamburger-menu {
+        display: flex; /* Show hamburger menu */
+    }
+
+    /* Hidden Menu Content */
+    .menu-content {
+        display: none; /* Hide initially */
+        flex-direction: column; /* Stack items vertically */
+        background-color: #fff;
+        position: absolute;
+        top: 60px; /* Position below the header */
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Show Menu Content When Active */
+    .menu-content.active {
+        display: flex; /* Show menu content */
+    }
+
+    /* Adjust Navigation Menu */
+    .menu-content nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+        gap: 1rem; /* Add spacing between menu items */
+    }
+
+    .menu-content nav ul li {
+        margin: 0; /* Remove horizontal spacing */
+    }
+
+    /* Adjust Login Section */
+    .menu-content .login-section {
+        flex-direction: row; /* Keep icons in a row */
+        justify-content: center; /* Center-align icons */
+        margin-top: 1rem; /* Add spacing above the login section */
+    }
+}
+
+
+/* Main */
+
+/* Section Styling */
+.main-section {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    height: 100vh; /* Full viewport height */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Image Container */
+.image-container {
+    text-align: center; /* Center content inside the container */
+}
+
+/* Image Styling */
+.image-container img {
+    margin-top: 1rem;
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+                    /* Product */
+                    
+/* Section Styling */
+.product-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem; /* Add padding for spacing */
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+/* Product Title */
+.product h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px; /* Add spacing below the title */
+    color: #333; /* Darker text for better visibility */
+}
+
+/* Container for Individual Items */
+.container-item {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+    gap: 1rem; /* Add consistent spacing between items */
+    justify-content: center; /* Center items horizontally */
+}
+
+/* Individual Item Styling */
+.container-item .item {
+    display: flex;
+    align-items: center; /* Align content vertically */
+    background-color: #F1F0F0;
+    width: 400px;
+    height: 200px;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #FFA500;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.container-item .item:hover {
+    transform: scale(1.1); /* Slight lift on hover */
+}
+
+/* Product Image Styling */
+.product-img {
+    width: 150px; /* Fixed width */
+    height: 150px; /* Fixed height */
+    background-color: #fff;
+    margin: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.product-img img:hover {
+    transform: scale(1.1); /* Zoom in slightly on hover */
+}
+
+/* Product Info Styling */
+.product-info {
+    flex: 1; /* Allow info to take up available space */
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push content to top and bottom */
+    height: 100%; /* Stretch vertically */
+}
+
+.product-info h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333; /* Darker text for better visibility */
+}
+
+.product-info p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px; /* Reduced size for better balance */
+    margin: 10px 0;
+    color: #555; /* Slightly lighter text for secondary info */
+}
+
+/* Button Group Styling */
+.btn {
+    display: flex;
+    gap: 10px; /* Consistent spacing between buttons */
+    margin-top: auto; /* Push buttons to the bottom */
+}
+
+.btn button {
+    flex: 1; /* Make buttons take equal width */
+    height: 40px;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.btn button:first-child {
+    background-color: #FFA500; /* Orange for "Cart" button */
+    color: white;
+}
+.btn button:last-child {
+    border: 1px solid #FFA500;
+    color: #FFA500;
+}
+.btn button:last-child:hover {
+    background-color: #FFA500;
+    color: white;
+}
+.btn button:hover {
+    transform: scale(1.05); /* Slight grow effect on hover */
+    opacity: 0.9; /* Slight fade effect */
+}
+
+    /* Location */
+/* Section Styling */
+.location-section {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+/* Location Title */
+.location-section h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px; /* Add spacing below the title */
+    color: #333; /* Darker text for better visibility */
+}
+
+/* Map Container */
+.map-container {
+    width: 100%; /* Full width of the section */
+    max-width: 1200px; /* Limit maximum width for larger screens */
+    margin: 0 auto; /* Center the map container */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Prevent overflow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+}
+
+/* Responsive Map */
+.map-container iframe {
+    width: 100%; /* Ensure the iframe takes up the full width of its container */
+    height: 450px; /* Fixed height for the map */
+    border: none; /* Remove iframe border */
+}
+
+        /* Footer Styling */
+footer {
+    background-color: #333; /* Dark background for contrast */
+    color: #fff; /* White text */
+    padding: 2rem 0; /* Add vertical padding */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Distribute content evenly */
+    align-items: center; /* Align items vertically */
+    max-width: 1200px; /* Limit width for larger screens */
+    margin: 0 auto; /* Center the container */
+    padding: 0 1rem; /* Add horizontal padding */
+}
+
+/* Social Media Section */
+.social-media {
+    display: flex;
+    gap: 15px; /* Space between icons */
+}
+
+.social-media a {
+    color: #fff; /* White icons */
+    font-size: 24px; /* Icon size */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.social-media a:hover {
+    color: #007bff; /* Blue on hover */
+}
+
+/* Contact Us Section */
+.contact-us {
+    text-align: center; /* Center-align text */
+}
+
+.contact-us h3 {
+    font-size: 20px;
+    margin-bottom: 10px; /* Add spacing below the heading */
+}
+
+.contact-us p {
+    font-size: 14px;
+    margin: 5px 0; /* Add spacing between paragraphs */
+}
+
+/* Logo Section */
+.logo img {
+    cursor: pointer;
+    width: 100px; /* Adjust logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        text-align: center; /* Center-align all content */
+        gap: 20px; /* Add spacing between sections */
+    }
+
+    .social-media {
+        justify-content: center; /* Center social media icons */
+    }
+    .main-section{
+        height: 50vh;
+    }
+}
+
+.user-welcome {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-welcome h1 {
+    font-size: 1rem;
+    margin: 0;
+    color: #333;
+}
+
+.user-welcome a {
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.user-welcome a:hover {
+    text-decoration: underline;
+}
+
+/* Custom styles that aren't covered by Bootstrap */
+
+/* Active state for navigation links */
+.nav-link.active {
+    color: #ffa500 !important;
+    border-bottom: 3px solid orange;
+}
+
+.nav-link:hover {
+    color: #ad7610 !important;
+}
+
+/* Custom orange background class */
+.bg-orange {
+    background-color: orange;
+    color: white;
+}
+
+/* Remove dropdown caret */
+.dropdown-toggle::after {
+    display: none;
+}
+
+/* Map Section */
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: #fff;
+}
+
+.social-media a {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-section {
+        height: 50vh;
+    }
+}
+
+/* User Welcome Section */
+.user-welcome a {
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.user-welcome a:hover {
+    text-decoration: underline;
+}

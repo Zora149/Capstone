@@ -1,0 +1,15 @@
+# Database configuration
+db_connect.php
+
+# XAMPP / Environmental files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Uploads (Optional: decide if you want to push user uploads)
+# upload_images/*
+# !upload_images/.gitkeep
+
+# Gemini/AI Temp files
+.gemini/

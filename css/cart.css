@@ -1,0 +1,609 @@
+.container {
+    display: flex;
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 20px auto;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping of elements on smaller screens */
+}
+
+.cart {
+    flex: 2;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.total {
+    flex: 1;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cart-header .items-count {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f1f1f1;
+}
+
+.product-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.remove {
+    color: red;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.quantity button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.quantity p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 30px;
+}
+
+.total-summary {
+    margin-bottom: 20px;
+}
+
+.total-summary div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.total-summary .total {
+    font-weight: bold;
+    border-top: 1px solid #000;
+    padding-top: 10px;
+    font-size: 18px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons .pay-now {
+    background-color: #ffa500;
+    color: #fff;
+}
+
+.buttons .pay-now:hover {
+    background-color: #ff8c00;
+}
+
+.buttons .pay-later {
+    background-color: #ddd;
+}
+
+.buttons .pay-later:hover {
+    background-color: #ccc;
+}
+
+.buttons button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #ccc !important;
+    color: #666 !important;
+}
+
+.buttons button:disabled:hover {
+    background-color: #ccc !important;
+    color: #666 !important;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease-in-out;
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s ease-in-out;
+    margin: auto;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.modal-content .GCash_logo {
+    width: 200px;
+    height: 100px;
+    margin: 0 auto; /* Center the logo horizontally */
+    display: block; /* Ensure it behaves as a block element */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #444;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #ff4d4d;
+}
+
+.qr-code {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto; /* Center the QR code */
+    display: block;
+}
+
+.done-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.done-btn:hover {
+    background-color: #0056b3;
+}
+
+.done-btn:focus {
+    outline: 2px solid #0056b3;
+}
+
+@keyframes fadeIn {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack cart and total vertically */
+    }
+
+    .cart,
+    .total {
+        flex: 1 1 100%; /* Full width for both cart and total */
+    }
+
+    h2 {
+        font-size: 20px; /* Reduce heading size */
+    }
+
+    .cart-header .items-count {
+        font-size: 16px; /* Reduce font size */
+    }
+
+    th, td {
+        font-size: 14px; /* Reduce table font size */
+    }
+
+    .quantity button {
+        width: 25px;
+        height: 25px; /* Smaller buttons */
+        font-size: 14px;
+    }
+
+    .quantity p {
+        font-size: 14px; /* Smaller quantity text */
+    }
+
+    .buttons button {
+        font-size: 14px; /* Smaller button text */
+    }
+
+    .modal-content {
+        width: 95%; /* Slightly wider modal on small screens */
+    }
+
+    .qr-code {
+        width: 120px;
+        height: 120px; /* Smaller QR code */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Add some padding for better spacing */
+    }
+
+    .cart,
+    .total {
+        padding: 15px; /* Reduce padding */
+    }
+
+    .product-img {
+        width: 60px;
+        height: 60px; /* Smaller product images */
+    }
+
+    .remove {
+        font-size: 12px; /* Smaller remove text */
+    }
+
+    .buttons button {
+        padding: 8px; /* Smaller buttons */
+    }
+
+    .done-btn {
+        font-size: 14px; /* Smaller done button text */
+    }
+}
+
+.gcash-reference {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.gcash-reference label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.gcash-reference input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.gcash-reference input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Pay Later Modal Styles */
+#payLaterModal .modal-content {
+    background-color: #FFA500; /* Orange background */
+    color: #fff; /* White text for better contrast */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#payLaterModal .close-btn {
+    color: #fff; /* White close button */
+}
+
+#payLaterModal .close-btn:hover {
+    color: #ff4d4d; /* Red on hover */
+}
+
+#payLaterModal .reference-number {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+    padding: 10px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+#payLaterModal .done-btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin: 0 auto;
+    background-color: #fff; /* White button */
+    color: #FF0D0D; /* Orange text */
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#payLaterModal .done-btn:hover {
+    background-color: #f0f0f0; /* Light gray on hover */
+}
+
+#updateStatusModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#updateStatusModal .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 5px;
+}
+
+#updateStatusModal .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#updateStatusModal .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#updateStatusModal .btn-confirm {
+    background-color: #28a745;
+    color: white;
+}
+
+#updateStatusModal .btn-cancel {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Receipt Modal Styles */
+.receipt-container {
+    font-family: 'Courier New', monospace;
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 100%;
+}
+
+.receipt-header {
+    text-align: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.receipt-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.receipt-header p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.receipt-info {
+    margin-bottom: 20px;
+}
+
+.receipt-info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.receipt-info-row strong {
+    font-weight: bold;
+}
+
+.receipt-items {
+    margin-bottom: 20px;
+}
+
+.receipt-items-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.receipt-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.receipt-item-name {
+    flex: 2;
+}
+
+.receipt-item-qty {
+    flex: 1;
+    text-align: center;
+}
+
+.receipt-item-price {
+    flex: 1;
+    text-align: right;
+}
+
+.receipt-total {
+    border-top: 2px solid #333;
+    padding-top: 10px;
+    margin-top: 15px;
+}
+
+.receipt-total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.receipt-total-final {
+    font-weight: bold;
+    font-size: 16px;
+    border-top: 1px solid #333;
+    padding-top: 8px;
+    margin-top: 8px;
+}
+
+.receipt-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    font-size: 12px;
+    color: #666;
+}
+
+.receipt-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.receipt-status.waiting {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.receipt-status.to-receive {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.receipt-status.completed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.receipt-status.cancelled {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Print styles for receipt */
+@media print {
+    .receipt-container {
+        border: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 15px;
+    }
+    
+    .modal-footer {
+        display: none !important;
+    }
+    
+    .btn-close {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+    }
+}
